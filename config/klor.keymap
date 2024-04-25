@@ -39,8 +39,23 @@
 
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <0 1>;
+            key-positions = <24 25>;
             bindings = <&kp ESC>;
+        };
+
+        ctrl+alt+del {
+            bindings = <&ctrl_alt_del>;
+            key-positions = <2 3 4>;
+        };
+    };
+
+    macros {
+        ctrl_alt_del: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp LEFT_ALT &kp DEL>;
+            label = "NEW_MACRO";
+            tap-ms = <5>;
         };
     };
 
